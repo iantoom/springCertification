@@ -1,13 +1,17 @@
 package id.bts.springcertification;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-@SpringBootApplication
+
 public class SpringCertificationApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringCertificationApplication.class, args);
+		
+		// Load multiple xml configuration
+		ApplicationContext context = new ClassPathXmlApplicationContext("dao.xml", "service.xml", "life_cycle.xml");
+		
+		
 	}
 
 }
