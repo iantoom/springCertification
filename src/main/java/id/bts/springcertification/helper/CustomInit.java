@@ -7,7 +7,7 @@ public class CustomInit {
 	
 	public CustomInit() {
 		super();
-		 System.out.println("constructor gets called for initializing data membersin Custom init"); 
+		 System.out.println("constructor gets called for initializing data members in Custom init"); 
 		this.message = "welcome!!";
 		this.name = "whoever you are";
 	}
@@ -17,16 +17,17 @@ public class CustomInit {
 		return message + " " + name;
 	}
 	
+	// The custom Init method, turn name instance to Uppercase
 	public void myInit() 
 	{ 
-	  name=name.toUpperCase(); 
+	  name = name.toUpperCase(); 
 	  System.out.println("myInit() get called"); 
 	}
 	
 	public void destroy() 
 	{ 
-	  name=null; 
-	  System.out.println("destroy called"); 
+	  name = null; 
+	  System.out.println("CustomInitBean destroy called"); 
 	} 
 	
 }

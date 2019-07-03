@@ -8,4 +8,8 @@
     <bean id="initBean" class="id.bts.springcertification.helper.CustomInit"
     init-method="myInit" destroy-method="destroy">
     </bean>
+    
+    <bean id="disposableBean" class="id.bts.springcertification.helper.DisposableBeanTest">
+    </bean>
+    
 </beans>

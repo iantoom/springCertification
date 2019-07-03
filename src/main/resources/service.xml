@@ -12,6 +12,7 @@
 	
 	<!-- declare a Bean Without ID, the bean Name would be anonymous -->
 	<!-- The auto-generated name of this bean is id.bts.springcertification.services.AnonymBeanService#0 -->
+	<!-- Anonymous bean cannot be referenced by ref attribute in property tag -->
 	<bean class="id.bts.springcertification.services.AnonymBeanService">
 	</bean>
 </beans>
