@@ -5,7 +5,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import id.bts.springcertification.helper.AppContextAware;
 import id.bts.springcertification.helper.CustomInit;
+import id.bts.springcertification.helper.DisposableBeanTest;
 
 
 public class SpringCertificationApplication {
@@ -23,7 +25,12 @@ public class SpringCertificationApplication {
 		System.out.println(customInit);
 		
 		// Implement DisposableBean make it easy to override destroy() by default.
-		DisposableBean disposableBean = (DisposableBean) context.getBean("disposableBean");
+		@SuppressWarnings("unused")
+		DisposableBean disposableBean = (DisposableBeanTest) context.getBean("disposableBean");
+		
+		//call contextAwareBean by type and call display Method
+		//Tell contextAwareBean to get disposableBean from context
+		context.getBean(AppContextAware.class).display();;
 		
 		// trigger custom destroy method
 		((AbstractApplicationContext)context).registerShutdownHook();

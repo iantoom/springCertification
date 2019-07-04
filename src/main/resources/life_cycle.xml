@@ -12,4 +12,7 @@
     <bean id="disposableBean" class="id.bts.springcertification.helper.DisposableBeanTest">
     </bean>
     
+    <bean id="contextAwareBean" class="id.bts.springcertification.helper.AppContextAware">
+    </bean>
+    
 </beans>

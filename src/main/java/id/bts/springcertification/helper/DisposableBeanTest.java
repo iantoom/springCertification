@@ -13,6 +13,10 @@ public class DisposableBeanTest implements DisposableBean {
 		this.name = "Ding diring ding ding";
 	}
 	
+	public void testForContextAware() {
+		System.out.println("Disposable Bean called from Application Context Aware");
+	}
+	
 	@Override
 	public String toString() {
 		return "DisposableBeanTest [message=" + message + ", name=" + name + "]";
