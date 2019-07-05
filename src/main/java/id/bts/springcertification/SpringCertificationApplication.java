@@ -24,6 +24,9 @@ public class SpringCertificationApplication {
 		// trigger the constructor
 		System.out.println(customInit);
 		
+		// call a InitializingBeanTest Class to trigger the constr
+		context.getBean("initializingBean");
+		
 		// Implement DisposableBean make it easy to override destroy() by default.
 		@SuppressWarnings("unused")
 		DisposableBean disposableBean = (DisposableBeanTest) context.getBean("disposableBean");
