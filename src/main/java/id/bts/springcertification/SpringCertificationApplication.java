@@ -1,11 +1,13 @@
 package id.bts.springcertification;
 
 import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import id.bts.springcertification.helper.AppContextAware;
+import id.bts.springcertification.helper.BeanPostProcessorTest;
 import id.bts.springcertification.helper.CustomInit;
 import id.bts.springcertification.helper.DisposableBeanTest;
 
@@ -34,6 +36,9 @@ public class SpringCertificationApplication {
 		//call contextAwareBean by type and call display Method
 		//Tell contextAwareBean to get disposableBean from context
 		context.getBean(AppContextAware.class).display();;
+		
+		BeanPostProcessor beanPostProcessor = (BeanPostProcessorTest) context.getBean("beanPostProcessor");
+		System.out.println(beanPostProcessor + " This bean succesfully retrieved from main class.");
 		
 		// trigger custom destroy method
 		((AbstractApplicationContext)context).registerShutdownHook();

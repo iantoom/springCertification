@@ -19,6 +19,7 @@
     <bean id="contextAwareBean" class="id.bts.springcertification.helper.AppContextAware">
     </bean>
     
-    
+    <bean id="beanPostProcessor" class="id.bts.springcertification.helper.BeanPostProcessorTest">
+    </bean>
     
 </beans>
